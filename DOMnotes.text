@@ -1,0 +1,110 @@
+What is the DOM?
+- stands for document object model
+- used to manipulate content, style and structure
+
+Selecting elements in the DOM.
+1. GetElementById()
+    - const title = document.GetElementById("exampleID");
+2. GetElementByClassName()
+    - const listItem = document.GetElementByClassName(exampleClassName"); 
+    - returns an array of all the items that have the specific class name in order of how they appear in the document
+3. getElementsByTagName()
+    - const listItem = document.GetElementByTagName("exampleTagName");
+    - returns an array of all the items that have the specific class name in order of how they appear in the document
+4. querySelector()
+    - const container = document.querySelector("div")
+    - allows you to select html and css selection such as divs, headers, paragraphs
+    - selects the first element/query in the document.
+5. querySelectorAll()
+    - const container = document.querySelectorAll("div")
+    - returns a nodelist of items 
+
+Styling an element.
+const title = document.querySelector("#main-heading");
+title.style.color = "red";
+- selects the title element of the document via querySelector and its exampleID
+- then we get the variable that it is stored in which in this case is title
+- title.style to enable css stlying, after choose which css styling property to use
+- general syntax: variable.style.property
+- seen as in-line styling which only works for one element at a time
+    - therefore trying to in-line style a list of items wont works
+   
+    const listItems = document.querySelectorAll("list-items");
+    listItems.style.fontSize = "20px";
+   
+    - will not work, in order to do this you must loop through all the times
+   
+    for(let i=0,i<listItems.length;i++){
+        listItems[i].style.fontSize = "20px";
+    }
+
+    - this will work 
+
+Creating elements.
+
+//creating elements
+
+const ul = document.querySelector("ul");
+const li = document.createElement("li");
+//adding elements
+
+ul.append(li);
+//modifying the text
+
+li.innerText = "Hello World!";;
+
+- first you need to select where you want to add the element in this case
+- we select the unsorted list, and we now want to add another list item to it
+- so we need to create that list item, after creating it we need to add it 
+- to the unsorted list with append, we want to append li to the ul
+
+Modifying Elements attributes and classes
+
+//con't from above
+//modifying attributes
+li.setAttribute("id","main-heading") //we are setting the newly created list item with the id: main-heading so it can take whatever css properties that main-heading already had and apply it to this list item
+li.removeAttribute("id") //removes the styling of main-heading
+
+const title = document.querySelector("#main-heading");
+console.log(title.getAttribute("id"));
+//this gives us the attribute of title
+
+//modifying classes
+li.classList.add("list-items") //added the class of list-items to the newly created element which gives the same styling of all elements that are under that class
+li.classList.remove("list-items") //removes the styling of the list-items class
+
+Remove Elements.
+li.remove(); //removes the element
+
+Traversing the DOM.
+1. parent node traversal: Traversing upward
+    
+    let ul = document.querySelector("ul");
+    console.log(ul.parentNode);
+    console.log(ul.parentElement);
+    console.log(ul.parentNode.parentNode);
+    console.log(ul.parentElement.parentElement);
+
+2. child node traversal: Traversing downward 
+
+    let ul = document.querySelector("ul");
+    console.log(ul.childNode);
+    console.log(ul.firstChild); //when console log these three we can see that there are more that the number of list items, this is because in the html file the indentation counts as a text node 
+    console.log(ul.lastChild);
+    ul.childNodes[1].style.backgroundColor = "blue";
+
+    console.log(ul,children); //gives only the list items
+    console.log(ul.firstElementChild); //gives the first item
+    console.log(ul.lastElementChild); //gives the last item 
+
+3. sibling node traversal:
+
+    let ul = document.querySelector("ul");
+    console.log(ul.previousSibling); //these two give the nodes only so the text nodes as well
+    console.log(ul.nextSibling);
+
+    console.log(ul.previousElementSibling); //these two will give the specific node elements
+    console.log(ul.nextElementSibling);
+
+Event listeners.
+1.
