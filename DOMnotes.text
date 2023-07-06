@@ -107,4 +107,88 @@ Traversing the DOM.
     console.log(ul.nextElementSibling);
 
 Event listeners.
-1.
+1. element.addEventListener("click",function);
+
+    const buttonTwo = document.querySelector(".btn-2");
+    function alertBtn(){
+        alert("I love chicken");
+    }
+    buttonTwo.addEventListener("click",alertBtn);
+
+2. mouseover
+
+    const newBackgroundColor  = document.querySelector(".box-3");
+    function changeColor(){
+        newBackgroundColor.style.backgroundColor = "blue";
+    }
+    newBackgroundColor.addEventListener("mouseover",changeBackgroundColor);
+
+Example: reveal more or less content feature.
+
+    const revealBtn = document.querySelector("reveal-btn");
+    const hiddenContent = document.querySelector(".hidden-content");
+
+    function revealContent(){
+        if(hiddenContent.classList.contains("reveal-btn")){
+            hiddenContent.classList.remove("reveal-btn");
+        } else {
+            hiddenContent.classList.add("reveal-btn");
+        }
+    }
+
+    revealBtn.addEventListener("click", revealContent);
+
+Event propagation.
+3 phases: 
+    - 1. Event Capturing: starts from the root and goes to the target
+    - 2. Target: then goes into the bubbling phase
+    - 3. Event Bubbling: then travels back to the target to the root
+can be seen as electricity traveling through a wire.
+
+for example: clicking a button, so the event capturing is the process of getting to the button in the DOM
+             so it starts at the top with the document then to the html, body, div and lastly the button,
+             the button here is the target which is phase 2, after the click this is when event bubbling starts to 
+             take place also known as phase 3 where it climbs up to the document, so the target is the button, then to the div, body html and then the document
+
+argument e (function(e)) means event and if you were to print e it will give you details about the event
+
+in the .addEventListener method, there is space for three arguements, the third being a boolean value that indicates event capturing and event bubbling, via true or false
+
+Event delegation.
+allows for uses to append a single event listener to a parent element
+that adds it to all of its present and future descendants that match a selector
+
+Example: on click on a list change the list item background color to grey
+
+    document.querySelector("#football").addEventListener("click", function(e){
+        console.log("football was clicked");
+
+        const target = e.target; //the list item
+
+        if(target.mathces("li"){
+            target.style.backgroundColor = "lightgrey";
+        })
+    })
+
+but if we wanted to do other list items we would have to duplicate and use it again 
+
+in order to do this but with only one function we can use evenet delegation
+
+Example:
+
+    document.querySelector("#sports").addEventListener("click",function(e){
+        
+        console.log(e.target.getAttribute("id")+ " wass clicked");
+
+        const target = e.target;
+
+        if(target.matches("li")){
+            target.style.backgroundColor = "lightgrey";
+        }
+    })
+
+now this examples allows us to have everything in 1 place unlike the above example, where 
+we have had to create 4 more of the exact code to reach this examples solution
+
+having multiple event listeners takes up a lot of memory therefore impacts our performance which is why 
+event delegation is useful to us
