@@ -10,50 +10,49 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  const tie = 0;
-  const win = 2;
-  const lose = 1;
-  if (playerSelection == "rock") {
-    if (computerSelection == "rock") {
-      console.log("its a tie!");
-      return tie;
-    }
-    if (computerSelection == "paper") {
-      console.log("you lose, paper beats rock!");
-      return lose;
-    }
-    if (computerSelection == "scissors") {
-      console.log("you win, rock beats scissors!");
-      return win;
-    }
-  } else if (playerSelection == "paper") {
-    if (computerSelection == "paper") {
-      console.log("its a tie!");
-      return tie;
-    }
-    if (computerSelection == "rock") {
-      console.log("you win, paper beats rock!");
-      return win;
-    }
-    if (computerSelection == "scissors") {
-      console.log("you lose, scissors beats paper!");
-      return lose;
-    }
-  } else if (playerSelection == "scissors") {
-    if (computerSelection == "scissors") {
-      console.log("its a tie!");
-      return tie;
-    }
-    if (computerSelection == "rock") {
-      console.log("you lose, rock beats scissors!");
-      return lose;
-    }
-    if (computerSelection == "paper") {
-      console.log("you win, scissors beats paper!");
-      return win;
-    }
+  const TIE = 0;
+  const WIN = 2;
+  const LOSE = 1;
+
+  if (playerSelection === computerSelection) {
+    console.log("It's a tie!");
+    return TIE;
+  }
+
+  switch (playerSelection) {
+    case "rock":
+      if (computerSelection === "paper") {
+        console.log("You lose, paper beats rock!");
+        return LOSE;
+      } else {
+        console.log("You win, rock beats scissors!");
+        return WIN;
+      }
+
+    case "paper":
+      if (computerSelection === "scissors") {
+        console.log("You lose, scissors beats paper!");
+        return LOSE;
+      } else {
+        console.log("You win, paper beats rock!");
+        return WIN;
+      }
+
+    case "scissors":
+      if (computerSelection === "rock") {
+        console.log("You lose, rock beats scissors!");
+        return LOSE;
+      } else {
+        console.log("You win, scissors beats paper!");
+        return WIN;
+      }
+
+    default:
+      console.log("Invalid selection!");
+      break;
   }
 }
+
 
 function game() {
   let playerPoints = 0;
