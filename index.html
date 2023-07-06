@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tys RPS game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lora:wght@400;500;600;700&family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <script src="logic.js"></script>
     </script>
+    <header class="title">
+        <h1>September</h1>
+        <h2> earth beats fire, wind beats earth, fire beats wind</h2>
+    </header>
+    <div class="main">
+      <div class="scoreboard">
+        <h2 class="header" id="scoreHead">
+            Choose your element!
+        </h2>
+        <h3 class="message" id="scoreMsg">
+            Win 5 battles to win the game
+        </h3>
+        <div class="field-container">
+            <div class="filed-window">
+                <div class="element" id="user-element"> <img src="./assets/placehold.png" alt=""></div>
+                <p class="score" id="user-score"> YOU: 0 </p>
+            </div>
+            <div class="filed-window">
+                <div class="element" id="com-element"> <img src="./assets/placehold.png" alt=""></div>
+                <p class="score" id="com-score"> COM: 0 </p>
+            </div>
+        </div>
+      </div>  
+
+
+
+
+    </div>
+
 </body>
 </html>

@@ -54,37 +54,37 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function game() {
-  let playerPoints = 0;
-  let computerPoints = 0;
-  for (let i = 0; i < max; i++) {
-    let playerSelection = getPlayerChoice();
-    let computerSelection = getComputerChoice();
+// function game() {
+//   let playerPoints = 0;
+//   let computerPoints = 0;
+//   for (let i = 0; i < max; i++) {
+//     let playerSelection = getPlayerChoice();
+//     let computerSelection = getComputerChoice();
 
-    let ptg = playRound(playerSelection, computerSelection); //(p)oints (t)o (g)ive
-    if (ptg == 1) {
-      computerPoints++;
-    }
-    if (ptg == 2) {
-      playerPoints++;
-    }
-    if (playerPoints == 5 || computerPoints ==5) {
-      break;
-    }
+//     let ptg = playRound(playerSelection, computerSelection); //(p)oints (t)o (g)ive
+//     if (ptg == 1) {
+//       computerPoints++;
+//     }
+//     if (ptg == 2) {
+//       playerPoints++;
+//     }
+//     if (playerPoints == 5 || computerPoints ==5) {
+//       break;
+//     }
    
-  }
+//   }
 
-  if (playerPoints > computerPoints) {
-    console.log(
-      "you win! " + "you: " + playerPoints + " computer:" + computerPoints
-    );
-  } else {
-    console.log(
-      "you lose! " + "you: " + playerPoints + " computer:" + computerPoints
-    );
-  }
+//   if (playerPoints > computerPoints) {
+//     console.log(
+//       "you win! " + "you: " + playerPoints + " computer:" + computerPoints
+//     );
+//   } else {
+//     console.log(
+//       "you lose! " + "you: " + playerPoints + " computer:" + computerPoints
+//     );
+//   }
 
-  return;
-}
+//   return;
+// }
 
-game();
+// game();
