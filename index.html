@@ -3,43 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tys RPS game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lora:wght@400;500;600;700&family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <title>September</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./assets/icon.png">
 </head>
 <body>
     <script src="logic.js"></script>
     </script>
     <header class="title">
-        <h1>September</h1>
-        <h2> earth beats fire, wind beats earth, fire beats wind</h2>
+        <h1 class="head">September</h1>
+        <h3 class="msg">earth beats fire, wind beats earth, fire beats wind</h3>
     </header>
     <div class="main">
       <div class="scoreboard">
-        <h2 class="header" id="scoreHead">
+        <p class="header" id="scoreHead">
             Choose your element!
-        </h2>
-        <h3 class="message" id="scoreMsg">
+        </p>
+        <p class="message" id="scoreMsg">
             Win 5 battles to win the game
-        </h3>
+        </p>
         <div class="field-container">
-            <div class="filed-window">
-                <div class="element" id="user-element"> <img src="./assets/placehold.png" alt=""></div>
-                <p class="score" id="user-score"> YOU: 0 </p>
+            <div class="field-window">
+                <div class="element" id="user-element"> 
+                    <img src="./assets/placehold.png" alt="">
+                    <p class="score" id="user-score"> YOU: 0 </p>
+                </div>
             </div>
-            <div class="filed-window">
-                <div class="element" id="com-element"> <img src="./assets/placehold.png" alt=""></div>
-                <p class="score" id="com-score"> COM: 0 </p>
+            <div class="field-window">
+                <div class="vs">
+                    <img src="./assets/vs.png" alt="">
+                </div>
+            </div>
+            <div class="field-window">
+                <div class="element" id="com-element"> 
+                    <img src="./assets/placehold.png" alt="">
+                    <p class="score" id="com-score"> COM: 0 </p></div>
             </div>
         </div>
+      </div>
+    </div>
+    <div class="buttons">
+        <button class="choice rock" id="rock">
+            <div class="rock-choice">
+                <img src="./assets/earth.png" alt="">
+            </div>
+        </button>
+        <button class="choice paper" id="paper">
+            <div class="paper">
+                <img src="./assets/wind.png" alt="">
+            </div>
+        </button>
+        <button class="choice scissors" id="scissors">
+            <div class="scissors-choice">
+                <img src="./assets/fire.png" alt="">
+            </div>
+        </button>
       </div>  
 
+    <footer class="foot">
+        <p>tylernsocial</p><a href="https://github.com/tylernsocial" target="_blank"><img src="./assets/github-mark-white.png" alt=""></a>
 
-
-
-    </div>
+    </footer>
 
 </body>
 </html>
