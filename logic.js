@@ -38,7 +38,7 @@ function eventHandler(playerSelection) {
   playRound(playerSelection, computerSelection);
   updateImg(playerSelection, computerSelection);
   updateScore();
-  setTimeout(nextSelection, 2222);
+  setTimeout(nextSelection, 1700);
   console.log(outcome);
 
   if (isGameOver()) {
