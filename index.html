@@ -8,8 +8,7 @@
     <link rel="icon" href="./assets/icon.png">
 </head>
 <body>
-    <script src="logic.js"></script>
-    </script>
+    
     <header class="title">
         <h1 class="head">September</h1>
         <h3 class="msg">earth beats fire, wind beats earth, fire beats wind</h3>
@@ -24,8 +23,8 @@
         </p>
         <div class="field-container">
             <div class="field-window">
-                <div class="element" id="user-element"> 
-                    <img src="./assets/placehold.png" alt="">
+                <div class="element"> 
+                    <img src="./assets/placehold.png" id="user-element" alt="">
                     <p class="score" id="user-score"> YOU: 0 </p>
                 </div>
             </div>
@@ -35,25 +34,25 @@
                 </div>
             </div>
             <div class="field-window">
-                <div class="element" id="com-element"> 
-                    <img src="./assets/placehold.png" alt="">
+                <div class="element" > 
+                    <img src="./assets/placehold.png" id="com-element" alt="">
                     <p class="score" id="com-score"> COM: 0 </p></div>
             </div>
         </div>
       </div>
     </div>
     <div class="buttons">
-        <button class="choice rock" id="rock">
+        <button class="choice rock" onclick="this.disabled = true" id="rock">
             <div class="rock-choice">
                 <img src="./assets/earth.png" alt="">
             </div>
         </button>
-        <button class="choice paper" id="paper">
+        <button class="choice paper" onclick="this.disabled = true" id="paper">
             <div class="paper">
                 <img src="./assets/wind.png" alt="">
             </div>
         </button>
-        <button class="choice scissors" id="scissors">
+        <button class="choice scissors" onclick="this.disabled = true" id="scissors">
             <div class="scissors-choice">
                 <img src="./assets/fire.png" alt="">
             </div>
@@ -64,6 +63,11 @@
         <p>tylernsocial</p><a href="https://github.com/tylernsocial" target="_blank"><img src="./assets/github-mark-white.png" alt=""></a>
 
     </footer>
-
+    <div class="screen" id="endScreen">
+        <p class="screen-title" id="endMsg"></p>
+        <button class="btn btn-restart" id="restartBtn">Play again</button>
+      </div>
+      <div class="overlay" id="overlay"></div>
+    <script src="logic.js"></script>
 </body>
 </html>
